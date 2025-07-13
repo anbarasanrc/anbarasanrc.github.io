@@ -86,8 +86,7 @@ function former() {
      var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        let { rsuc, rtext } = JSON.parse(this.responseText)
-        document.getElementById("contactresponce").innerHTML = rtext;
+        document.getElementById("contactresponce").innerHTML = JSON.parse(this.responseText).message;
       }
     };
     xhttp.open("POST", "https://portfolio-mailer-pi.vercel.app/api/hello", true);
